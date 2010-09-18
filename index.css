@@ -1,0 +1,144 @@
+/* jQuery UI */
+.ui-helper-clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.ui-helper-clearfix { display: inline-block; }
+
+html,
+body,
+div#album {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+html {
+    *overflow-y: hidden;
+}
+body {
+    background-color: #171717;
+    color: #fff;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    overflow: hidden;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    *overflow-x: hidden;
+}
+div#album {
+    position: absolute;
+    white-space: nowrap;
+    left: 0;
+    top: 0;
+    z-index: 3;
+}
+div.frame,
+div.frame img,
+div.frame label {
+    cursor: pointer;
+}
+#title,
+div.frame {
+    margin: 8px;
+    display: inline-block;
+    zoom:1;
+    *display: inline;
+    text-align: center;
+    vertical-align: top;
+    border: 1px dotted #444;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+
+    color: #fff;
+    background-color: transparent;
+    background-color: rgba(0, 0, 0, .5);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#88000000,endColorstr=#88000000);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#88000000,endColorstr=#88000000)";
+}
+#title,
+div.frame div.border {
+    padding: 8px;
+    height: 198px;
+    overflow: hidden;
+    position: relative;
+}
+
+div.frame:hover,
+div.active-frame {
+    background-color: #000;
+    background-color: rbga(0,0,0,1);
+    border-color: #777;
+}
+div.active-frame {
+    font-size: 240%;
+}
+div.active-frame div.border {
+    height: 224px;
+}
+div.frame div.label {
+    padding-top: 15px;
+    padding-left: 4px;
+}
+div.photo {
+    height: 160px;
+    overflow: hidden;
+}
+img {
+    border: 0;
+}
+img.fullscreen-toggle {
+    cursor: pointer;
+}
+img.fullscreen-photo,
+img.fullscreen-lowsrc {
+    display: none;
+    margin: 0 auto;
+}
+img.fullscreen-photo,
+img.fullscreen-lowsrc {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+img.fullscreen-byheight {
+    bottom: auto;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    width: auto;
+}
+#title {
+    width: 436px;
+    padding: 8px;
+}
+/*#title label {
+    display: block;
+    font-size: 280%;
+}*/
+#title img {
+    margin-top: 76px;
+}
+div.arrow {
+    display: none;
+    font-family: "Comic Sans MS";
+    font-size: 260%;
+    font-weight: bold;
+    position: fixed;
+    vertical-align: middle;
+    z-index: 2;
+    top: 20px;
+    opacity: 0.4;
+    padding: 20px;
+}
+div.arrow-disabled {
+    display: none;
+}
+div.arrow:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+#previous {
+    left: 0;
+}
+#next {
+    right: 0;
+}
