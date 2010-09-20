@@ -1,12 +1,5 @@
 <?php
-define('PARLOUR_PAGE_TITLE', 'Gallery Title');
-define('PARLOUR_FLICKR_POOL_ID', 'SPECIFY THIS');
-define('PARLOUR_FLICKR_API_KEY', 'SPECIFY THIS TOO');
-
-define('PARLOUR_CACHE_FILE', 'flickr_cache/cache.php');
-define('PARLOUR_MAX_IMAGES', 50); // paging not implemented.
-define('PARLOUR_MAX_CACHE_TIME', 60*60*24); // 24 hours
-
+include_once('config.php');
 include_once('Zend/Service/Flickr.php');
 $flickr = new Zend_Service_Flickr(PARLOUR_FLICKR_API_KEY);
 ?><!doctype html>
@@ -34,7 +27,7 @@ $flickr = new Zend_Service_Flickr(PARLOUR_FLICKR_API_KEY);
 
             ob_start();
 			echo '<!-- dynamically generated -->';
-			echo '<!--' . print_r($results, TRUE) . '-->';
+
 		    foreach ($results as $result) {
 			    $small = $result->Small;
 			    $large = $result->Large;
@@ -52,7 +45,7 @@ $flickr = new Zend_Service_Flickr(PARLOUR_FLICKR_API_KEY);
 
 	        $content = ob_get_contents();
 	        ob_end_flush();
-	        //file_put_contents($fileName, $content);
+	        file_put_contents($fileName, $content);
     	}
     } catch(Exception $e) {
     	include $fileName;

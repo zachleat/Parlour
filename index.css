@@ -109,6 +109,7 @@ img.fullscreen-byheight {
 #title {
     width: 436px;
     padding: 8px;
+    font-size: 200%;
 }
 /*#title label {
     display: block;
